@@ -1,0 +1,69 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/PersonalContrat.sol": "PersonalContract"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/PersonalContrat.sol": {
+			"keccak256": "0x0bbc47251151f14131ed74af0d89b45781177ce2c3ea328630c2f05ca19d5d72",
+			"urls": [
+				"bzz-raw://5734597c51265d95e028f5708d570e0ec71a0cd1bdd5744d624970fa91b5bd31",
+				"dweb:/ipfs/QmdLmD1U6HnUKVfYpsfpcPmJUvjEwcEDYhedNjTmz3ANkE"
+			]
+		}
+	},
+	"version": 1
+}

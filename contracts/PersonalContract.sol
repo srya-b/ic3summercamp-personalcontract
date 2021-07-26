@@ -27,6 +27,7 @@ contract PersonalContract is IPersonalContract {
 
     event NewEvent(uint256 indexed eventHash, address indexed fro, uint256 timestamp);
     event Cancelled(uint256 indexed eventHash, address indexed fro, string reason);
+    event Blocked(address indexed who, string reason);
 
 	constructor (string memory _name) public {
 		name = _name;
@@ -64,18 +65,30 @@ contract PersonalContract is IPersonalContract {
         
         e.cancelled = true;
         e.reason = reason;
+        // TODO: maybe we should have some kind of contract callback when cancelling instead of scheduler watching for some event?
         
         emit Cancelled(e.eventHash, e.who, e.reason);
     }
     
     // decline and remove the user's allowed schedule slots
-    function declineAndRescindHour(uint256 eventHash, string memory reason) external override returns (bool) {
-        // TODO implementation
+    function declineAndBlock(uint256 eventHash, string memory reason) external override returns (bool) {
+        Event storage e = events[eventHash];
+        require( events[eventHash].who != address(0) );
+        require( e.cancelled == false);
+        require(block.timestamp >= e.epoch_timestamp);
+        
+        e.cancelled = true;
+        e.reason = true;
+        
+        balances[e.who] = 0;
+        
+        emit Blocked(e.who, reason);
+        
         return true;
     }
     
     // block this address from creating future events (does this matter, user can use some other address and still redeem card)
-    function blockUser(address to_block) external override returns (bool) {
+    function blockUser(address to_block) public override returns (bool) {
         // TODO implementation
         return true;
     }

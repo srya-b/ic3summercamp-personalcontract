@@ -48,7 +48,7 @@
 		"gasEstimates": null,
 		"methodIdentifiers": {
 			"blockUser(address)": "3da01325",
-			"declineAndRescindHour(uint256,string)": "aa1605c1",
+			"declineAndBlock(uint256,string)": "553ad8c3",
 			"declineHour(uint256,string)": "c249d342",
 			"destroyPastEvents(uint256)": "444cf21b",
 			"redeemCard(bytes32,uint8,bytes32,bytes32)": "c1455792",
@@ -88,7 +88,7 @@
 					"type": "string"
 				}
 			],
-			"name": "declineAndRescindHour",
+			"name": "declineAndBlock",
 			"outputs": [
 				{
 					"internalType": "bool",

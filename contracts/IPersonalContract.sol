@@ -16,7 +16,7 @@ interface IPersonalContract {
     function declineHour(uint256 eventHash, string memory reason) external;
     
     // decline and remove the user's allowed schedule slots
-    function declineAndRescindHour(uint256 eventHash, string memory reason) external returns (bool);
+    function declineAndBlock(uint256 eventHash, string memory reason) external returns (bool);
     
     // block this address from creating future events (does this matter, user can use some other address and still redeem card)
     function blockUser(address to_block) external returns (bool);

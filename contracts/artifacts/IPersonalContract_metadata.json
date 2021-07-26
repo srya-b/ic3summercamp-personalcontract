@@ -37,7 +37,7 @@
 						"type": "string"
 					}
 				],
-				"name": "declineAndRescindHour",
+				"name": "declineAndBlock",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -167,10 +167,10 @@
 	},
 	"sources": {
 		"contracts/IPersonalContract.sol": {
-			"keccak256": "0xfc968ccb21faffd22bb173c58a55cd6c282fe1ec3110a12eb970a957a42af08e",
+			"keccak256": "0xd6df248b78f6902c4a1fff6af60830486ab7e73a0fe30e5aab105533e3377450",
 			"urls": [
-				"bzz-raw://ec4113ea81240a4f9f43e982cfc716c6dc07a786b25f6662b35180d4dfb58c61",
-				"dweb:/ipfs/QmeuK8gzA7dVY1vERXDgx9vNq3XY9zMSSiiWMe18T1hsG8"
+				"bzz-raw://704d6cad7828b09ab9b0feffe874677bff1e3145faf56f98a9095fafd502ffaa",
+				"dweb:/ipfs/Qmbc87eTUr6fMEsKdgaUYNqPQ4Mf9hsV7VkWGX8UabEZH1"
 			]
 		}
 	},

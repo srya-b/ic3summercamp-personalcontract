@@ -1,0 +1,193 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"görli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"blockUser(address)": "3da01325",
+			"declineAndRescindHour(uint256,string)": "aa1605c1",
+			"declineHour(uint256,string)": "c249d342",
+			"destroyPastEvents(uint256)": "444cf21b",
+			"redeemCard(bytes32,uint8,bytes32,bytes32)": "c1455792",
+			"scheduleHour(uint256)": "39f7a554"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "to_block",
+					"type": "address"
+				}
+			],
+			"name": "blockUser",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "eventHash",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "reason",
+					"type": "string"
+				}
+			],
+			"name": "declineAndRescindHour",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "eventHash",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "reason",
+					"type": "string"
+				}
+			],
+			"name": "declineHour",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "eventHash",
+					"type": "uint256"
+				}
+			],
+			"name": "destroyPastEvents",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "hash",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint8",
+					"name": "v",
+					"type": "uint8"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "s",
+					"type": "bytes32"
+				}
+			],
+			"name": "redeemCard",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "time_since_epoch",
+					"type": "uint256"
+				}
+			],
+			"name": "scheduleHour",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

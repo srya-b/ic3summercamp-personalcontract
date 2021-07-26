@@ -8,17 +8,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "address",
 						"name": "to_block",
 						"type": "address"
@@ -97,19 +86,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "name",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "bytes32",
@@ -176,7 +152,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/PersonalContract.sol": "PersonalContract"
+			"contracts/IPersonalContract.sol": "IPersonalContract"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -195,21 +171,6 @@
 			"urls": [
 				"bzz-raw://ec4113ea81240a4f9f43e982cfc716c6dc07a786b25f6662b35180d4dfb58c61",
 				"dweb:/ipfs/QmeuK8gzA7dVY1vERXDgx9vNq3XY9zMSSiiWMe18T1hsG8"
-			]
-		},
-		"contracts/PersonalContract.sol": {
-			"keccak256": "0xbb4bf58d627d6f774491c3cda79ccbc2f3ccf3dbbb24364d57838342029f2867",
-			"urls": [
-				"bzz-raw://94ce36f3cf812f4bc9a819fb9c10b3c8aa659793d72f907a8dddfc6022e1bb99",
-				"dweb:/ipfs/QmcBu3dYhheLBpLmZ3LAhMGNayaXYLJJRW2XMLaP3tE1Dw"
-			]
-		},
-		"contracts/libraries/ECDSA.sol": {
-			"keccak256": "0x367f51a70a1de2d8d745553c481f572c38e06ed229643f0ab012a799672abeb7",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://7afee5659166734a012eab15f267c1802bd0705d693e0ed9140152097303a6a8",
-				"dweb:/ipfs/QmZYfkS1eVLL7HWVzehX66SGddCC67rJcPMbojRtLCb765"
 			]
 		}
 	},

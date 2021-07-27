@@ -8,12 +8,31 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "when",
+						"type": "uint256"
+					}
+				],
+				"name": "addEvent",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
-						"name": "to_block",
+						"name": "who",
 						"type": "address"
 					}
 				],
-				"name": "blockUser",
+				"name": "blockAddress",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -21,48 +40,6 @@
 						"type": "bool"
 					}
 				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "eventHash",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "reason",
-						"type": "string"
-					}
-				],
-				"name": "declineAndBlock",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "eventHash",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "reason",
-						"type": "string"
-					}
-				],
-				"name": "declineHour",
-				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -83,6 +60,47 @@
 					}
 				],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "num",
+						"type": "uint256"
+					}
+				],
+				"name": "getEvent",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "enabled",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "when",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "who",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "open",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct IPersonalContract.Event",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -123,11 +141,11 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "time_since_epoch",
+						"name": "num",
 						"type": "uint256"
 					}
 				],
-				"name": "scheduleHour",
+				"name": "scheduleSlot",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -167,10 +185,10 @@
 	},
 	"sources": {
 		"contracts/IPersonalContract.sol": {
-			"keccak256": "0xd6df248b78f6902c4a1fff6af60830486ab7e73a0fe30e5aab105533e3377450",
+			"keccak256": "0xfdb7ecb667f328436cdc74d6d86814a52d2eeaf176eeabd619850f97d4027e0c",
 			"urls": [
-				"bzz-raw://704d6cad7828b09ab9b0feffe874677bff1e3145faf56f98a9095fafd502ffaa",
-				"dweb:/ipfs/Qmbc87eTUr6fMEsKdgaUYNqPQ4Mf9hsV7VkWGX8UabEZH1"
+				"bzz-raw://be3540ebc0fb789bfe7360d95bd0fb71222d836c3687be103376ec84c48e33ed",
+				"dweb:/ipfs/QmUueyAR4P4u1bpSHaT6s51skn9W4EpUDVvU4kZ4T5669x"
 			]
 		}
 	},

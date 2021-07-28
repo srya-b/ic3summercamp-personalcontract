@@ -291,6 +291,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "owner_url",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "bytes32",
@@ -410,10 +423,10 @@
 	},
 	"sources": {
 		"contracts/PersonalContractProxy.sol": {
-			"keccak256": "0x85a3457aa193ff01cb6310f83ade68adc8056432c07316f7921ca47a53ae131f",
+			"keccak256": "0x5a20ad6677613dc7120a1636bd6afb0d580c519ba7578eb11109911ca9e4011b",
 			"urls": [
-				"bzz-raw://cdef1b90fc2b32fa562036feb0bb33af79c30f171c0450eccc900f3147ca3c81",
-				"dweb:/ipfs/QmY1Abs5AQJqebdZXUUj1wm8Gyz4RGJVTF9r4DmGufUvcK"
+				"bzz-raw://14f9ea55c8b644f1e7bcacdfc8cf4c9dbb7e61d75dd42685464a74b4b87e7c41",
+				"dweb:/ipfs/QmWxxVqmyucNBFwEsFGDzE6aLi9CQVkmsM3Uv2mBZYz5Q3"
 			]
 		},
 		"contracts/libraries/ECDSA.sol": {

@@ -5,6 +5,7 @@ import "contracts/libraries/ECDSA.sol";
 contract PersonalContractProxy {
 	string public name;
 	address public _owner = msg.sender;
+	string public owner_url;
 
     mapping (address => uint256) public balances;
     mapping (uint256 => Event) public events;
@@ -51,10 +52,6 @@ contract PersonalContractProxy {
     function getEvent(uint256 num) public view returns (Event memory) {
         Event storage e = events[whenFromNum[num]];
         return e;
-        // when = e.when;
-        // who = e.who;
-        // cancelled = e.cancelled;
-        // reason = e.reason;
     }
     
     function scheduleSlot(uint256 num) onlyAllowed external returns (bool) {

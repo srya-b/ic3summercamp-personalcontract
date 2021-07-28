@@ -213,6 +213,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "owner_url",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -292,10 +305,10 @@
 	},
 	"sources": {
 		"contracts/PersonalContract.sol": {
-			"keccak256": "0x945400508dff4f88f40c73d12eb257d28b49faf449e0a009edf0bb27181df749",
+			"keccak256": "0xd5cfeff7f99fa98948cca6c11b145dff6cac5559eacc6f0d11286e6c3910210a",
 			"urls": [
-				"bzz-raw://e8778de3ea7afa590a32067ffc222b981de126aed174304d6f34a2ad622ae3ce",
-				"dweb:/ipfs/QmNhri4sXDcqhGfpmsYHV9dHrebxwMtV15uCgBUrTXDUAj"
+				"bzz-raw://89df2c17750f3f45d825477796efc1a8ac0dd642aedf61d698e3c212f31419b9",
+				"dweb:/ipfs/QmfMNk2EDrMDBrZ32aVM8FgeQEu9UNcCA2m5V9nLZF8nVo"
 			]
 		},
 		"contracts/libraries/ECDSA.sol": {

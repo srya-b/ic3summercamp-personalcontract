@@ -6,23 +6,39 @@
         const contractName = 'PersonalContract' // Change this for other contract
         const constructorArgs = ["Surya"]    // Put constructor args (if any) here for your contract
 
+        const proxyaddr = "0x8601eBB745ADA594E3361D30F605ECF5A0668141";
+        const calldata = "0x9fc385ec0000000000000000000000000000000000000000000000000000000000000003";
+        
+
         // Note that the script needs the ABI which is generated from the compilation artifact.
         // Make sure contract is compiled and artifacts are generated
         const artifactsPath = `browser/contracts/artifacts/${contractName}.json` // Change this for different path
     
         const metadata = JSON.parse(await remix.call('fileManager', 'getFile', artifactsPath))
         // 'web3Provider' is a remix global variable object
-        const signer = (new ethers.providers.Web3Provider(web3Provider)).getSigner()
+        let web3 = new ethers.providers.Web3Provider(web3Provider);
+        //const signer = (new ethers.providers.Web3Provider(web3Provider)).getSigner()
+        const signer = web3.getSigner();
     
-        let factory = new ethers.ContractFactory(metadata.abi, metadata.data.bytecode.object, signer);
     
-        let contract = await factory.deploy(...constructorArgs);
+        const tx = {
+            "to": proxyaddr,
+            "data": calldata,
+            "value": 0,
+        }
+
+        signer.sendTransaction( tx );
+        // let factory = new ethers.ContractFactory(metadata.abi, metadata.data.bytecode.object, signer);
     
-        console.log('Contract Address: ', contract.address);
+        // let contract = await factory.deploy(...constructorArgs);
     
-        // The contract is NOT deployed yet; we must wait until it is mined
-        await contract.deployed()
-        console.log('Deployment successful.')
+        // console.log('Contract Address: ', contract.address);
+    
+        // // The contract is NOT deployed yet; we must wait until it is mined
+        // await contract.deployed()
+        // console.log('Deployment successful.')
+        
+        web3.eth.sendTransaction(tx);
     } catch (e) {
         console.log(e.message)
     }

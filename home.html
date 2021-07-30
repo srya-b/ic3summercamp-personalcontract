@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Personal Smart Contract</title>
+		
+		<!-- CSS -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://fullcalendar.io/js/fullcalendar-2.2.5/fullcalendar.css" rel="stylesheet">
+		<link rel="stylesheet" href="index.css">
+
+
+		<!-- JS & Web3 -->
+		<script
+		  src="https://code.jquery.com/jquery-2.2.4.min.js"
+		    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script src="https://fullcalendar.io/js/fullcalendar-2.2.5/lib/moment.min.js"></script>
+		<script src="https://fullcalendar.io/js/fullcalendar-2.2.5/fullcalendar.min.js"></script>
+		<script src="index.js"></script>
+
+	<head>
+	<body>
+		<d class="container">
+		
+		  <nav class="navbar navbar-default" role="navigation">
+		    <div class="container-fluid" style="padding-right: 0">
+		      <div class="navbar-header">
+		      </div>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li>
+		          <span id="usertitle">User</span>
+		          <span class="badge" id="user"></span>
+		        </li>
+		      </ul>
+		    </div>
+		  </nav>
+		
+		  <div class="row" id="title">
+		    <div class="text-center col-sm-12">My Personal Smart Contract Dashboard</div>
+		  </div>
+		
+		  This is the issuer's dashboard page.<br/>
+		  The tasks it provides are:
+		  <ul>
+		    <li>Create a new batch of paper wallet business cards</li>
+		    <li>View any reserved office hours meeting requests</li>
+		    <li>Send a tip to holders of your business cards</li>
+		    <li>Create a forwarding address for the contract</li>
+		  </ul>
+		  <br />
+		
+		  <div class="card">
+		    <div class="card-header">
+		      Available events to claim
+		    </div>
+		    <div class="card-body">
+		      This will list the meetings that are available. For each one, you have the option to mark it as "Cancel / no-show" or "completed" 
+		      <div class="form-group row">           
+		        <div class="row" style="padding-left: 12px; margin-top: 20px; width: 100%">
+		          <input type="button" class="btn btn-lg btn-info col-sm-5" style="font-weight: bold" onclick="addEvent();" value="Add new event" />
+		        </div>
+		      </div>
+		          UnClaimed Events: <span id="unclaimedEvents"></span><br />
+		          Claimed Events: <span id="claimedEvents"></span><br />
+		    </div>
+		  </div>
+		  <div class="card">
+		    <div class="card-header">
+		      Debug log
+		    </div>
+		    <div>
+		      <div class="card-body">
+		        <pre id="log"></pre>
+		      </div>
+		    </div>
+		  </div>
+		<div class="card">
+		    <div class="card-header">
+		      View All Scheduled Meetings
+		    </div>
+		    <div>
+		      <div class="card-body">
+		        <div id="calendar">
+		        </div>
+		      </div>
+		      
+		    </div>
+		    
+		  </div>
+		
+		
+		<!-- Store the ABI -->
+		<p hidden id="listABI">
+		  [{"inputs":[],"name":"addEvent","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"i","type":"uint256"}],"name":"claimEvent","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"events","outputs":[{"internalType":"bool","name":"enabled","type":"bool"},{"internalType":"bool","name":"claimed","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"num_events","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]
+		</p>
+		
+		<p hidden id="proxyABI">
+		[{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"who","type":"address"},{"indexed":false,"internalType":"string","name":"reason","type":"string"}],"name":"Blocked","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"when","type":"uint256"},{"indexed":true,"internalType":"address","name":"who","type":"address"},{"indexed":false,"internalType":"string","name":"reason","type":"string"}],"name":"Cancelled","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"when","type":"uint256"},{"indexed":true,"internalType":"address","name":"who","type":"address"}],"name":"NewEvent","type":"event"},{"inputs":[],"name":"_owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"when","type":"uint256"}],"name":"addEvent","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"allowed","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"balances","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"who","type":"address"}],"name":"blockAddress","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"eventHash","type":"uint256"}],"name":"destroyPastEvents","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"events","outputs":[{"internalType":"bool","name":"enabled","type":"bool"},{"internalType":"uint256","name":"when","type":"uint256"},{"internalType":"address","name":"who","type":"address"},{"internalType":"bool","name":"open","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"num","type":"uint256"}],"name":"getEvent","outputs":[{"components":[{"internalType":"bool","name":"enabled","type":"bool"},{"internalType":"uint256","name":"when","type":"uint256"},{"internalType":"address","name":"who","type":"address"},{"internalType":"bool","name":"open","type":"bool"}],"internalType":"struct PersonalContractProxy.Event","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"interval","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"numEvents","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner_url","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"hash","type":"bytes32"},{"internalType":"uint8","name":"v","type":"uint8"},{"internalType":"bytes32","name":"r","type":"bytes32"},{"internalType":"bytes32","name":"s","type":"bytes32"}],"name":"redeemCard","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"num","type":"uint256"}],"name":"scheduleSlot","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"seedSlots","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"whenFromNum","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]
+		</p>
+		
+		<p hidden id="mainABI">
+		[{"inputs":[{"internalType":"string","name":"_name","type":"string"},{"internalType":"address","name":"_delegate","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"who","type":"address"},{"indexed":false,"internalType":"string","name":"reason","type":"string"}],"name":"Blocked","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"when","type":"uint256"},{"indexed":true,"internalType":"address","name":"who","type":"address"},{"indexed":false,"internalType":"string","name":"reason","type":"string"}],"name":"Cancelled","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"when","type":"uint256"},{"indexed":true,"internalType":"address","name":"who","type":"address"}],"name":"NewEvent","type":"event"},{"stateMutability":"nonpayable","type":"fallback"},{"inputs":[],"name":"_owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"allowed","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"balances","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"events","outputs":[{"internalType":"bool","name":"enabled","type":"bool"},{"internalType":"uint256","name":"when","type":"uint256"},{"internalType":"address","name":"who","type":"address"},{"internalType":"bool","name":"open","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"interval","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"numEvents","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner_url","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"seedSlots","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"d","type":"address"}],"name":"updateDelegate","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"whenFromNum","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]
+		</p>
+		</d>
+
+	<!--	<div id="container">
+			<div id="header">
+				<h1>Personal Smart Contract</h1>
+				<h2>Living the decentralized life</h2>
+			</div>
+
+			<div id="onboarding">
+				<h2>Onboarding Section</h2>
+			</div>
+			
+			<h2>Testing out web3 functions</h2>
+
+			<div id="wallet">
+				<button id="connectWalletButton">Connect Wallet</button>
+			</div>
+
+			<div id="contract">
+				<button id="createContractButton">Create Contract</button>
+			</div>
+
+			<div id="store">
+				<button id="storeButton">Store Value (val = 1)</button>
+				<h2>Takes a couple seconds to store value</h2>
+			</div>
+
+			<div id="output">
+				<button id="outputButton">Ouput</button>
+			</div>
+
+			<div>
+				<h2>Output: </h2>
+				<h2 id="outputValue"></h2>
+			</div>
+			
+		</div> -->
+	</body>
+</html>

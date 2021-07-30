@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.0+commit.c7dfd78e"
+		"version": "0.8.4+commit.c7e474f2"
 	},
 	"language": "Solidity",
 	"output": {
@@ -305,10 +305,10 @@
 	},
 	"sources": {
 		"contracts/PersonalContract.sol": {
-			"keccak256": "0xd5cfeff7f99fa98948cca6c11b145dff6cac5559eacc6f0d11286e6c3910210a",
+			"keccak256": "0xdc598bef864a13b1e7cabf92c0b2355dfabcb5bc9b2db8dea6ab75149a30dac3",
 			"urls": [
-				"bzz-raw://89df2c17750f3f45d825477796efc1a8ac0dd642aedf61d698e3c212f31419b9",
-				"dweb:/ipfs/QmfMNk2EDrMDBrZ32aVM8FgeQEu9UNcCA2m5V9nLZF8nVo"
+				"bzz-raw://681c30be884d6ea6cffb33b934d837d2c65e500c7504a54c4cc3647605045f34",
+				"dweb:/ipfs/QmV5BiHdgCTMUm7eFvPh5xrp2iKXy24a9tcY7L381aVHEd"
 			]
 		},
 		"contracts/libraries/ECDSA.sol": {

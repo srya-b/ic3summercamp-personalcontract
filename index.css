@@ -1,0 +1,154 @@
+/*body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000000;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#header {
+    text-align: center;
+}
+
+#onboarding {
+    margin-top: 100px;
+}
+
+#wallet {
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+#contract {
+    margin-bottom: 50px;
+}
+
+#store {
+    margin-bottom: 50px;
+}
+
+#output {
+    margin-bottom: 10px;
+}
+
+#createContractButton, #connectWalletButton, #storeButton, #outputButton {
+    width: 200px;
+    height: 35px;
+    border: 1px solid #8d8989;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+#output{
+    color:#ffffff;
+}
+
+#web3Test{
+    margin-top: 100px;
+    width: 500px;
+    border: solid;
+    border-width: 5px;
+    border-color: #ffffff;
+}
+
+h1 {
+    font-size: 50px;
+	font-weight: 700;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 20px;
+	font-weight: 600;
+    color: #ffffff;
+}*/
+
+body {
+	font-family: 'Roboto Mono',monospace;
+	background-image: linear-gradient(140deg, #ffffc7, #12ffc4 41.6%, rgba(180, 203, 246, 0.99))
+}
+
+#title {
+	font-size: 60px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	border-color: #d8aee8;
+	border-width: 10px;
+	border-style: solid;
+	background-color: #ffe3cc;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	color: #6e2988;
+	font-family:georgia;
+}
+
+
+.navbar {
+	padding-right: 0;
+	margin-right: 0;
+	font-weight: bold;
+	color: #9d0312;
+}
+
+.navbar-right {
+	margin-right: 0;
+	border-radius: 12px;
+	background-color: #dc3f355e;
+	padding: 3px;
+	border-style: solid;
+	border-color: #4e7699;
+	border-width: 4px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#usertitle {
+	color: #4e7699;
+}
+
+.card {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-top: 0;
+	padding-bottom: 0;
+	border-color: #296588;
+	border-width: 10px;
+	border-style: solid;
+	background-color: #e3fdff;
+	font-weight: bold;
+	color: #297588;
+}
+
+.card-header {
+	border-bottom: 10px;
+	border-bottom-style: solid;
+	border-bottom-color: #296588;
+	font-size: 30px;
+}
+
+.card-body {
+	background-color: rgb(255,251,220);
+}
+
+.balance {
+	border-style: solid; 
+	border-color: #00000030; 
+	border-width: 2px; 
+	border-radius: 10px;
+	padding-top: 5px;
+}
+
+#balance label {
+	margin-top: .5rem;
+	/*margin-bottom: 0;*/
+}
+
+#calender {
+  max-width: 900px;
+  margin: 40px auto;
+}

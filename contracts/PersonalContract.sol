@@ -5,7 +5,7 @@ import "contracts/libraries/ECDSA.sol";
 contract PersonalContract {
 	string public name;
 	address public _owner = msg.sender;
-	string public owner_url;
+    	string public owner_url;
 
 
     mapping (address => uint256) public balances;
@@ -68,7 +68,7 @@ contract PersonalContract {
             let result := delegatecall(gas(), d, 0, calldatasize(), 0, 0)
             returndatacopy(0, 0, returndatasize())
             switch result
-            // delegatecall returns 0 on error.
+
             case 0 {
                 revert(0, returndatasize())
             }

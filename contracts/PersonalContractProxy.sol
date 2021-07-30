@@ -74,6 +74,7 @@ contract PersonalContractProxy {
     function addEvent(uint256 when) onlyOwner external returns (bool) {
         numEvents += 1;
         events[numEvents].enabled = true;
+        events[numEvents].open = true;
         events[numEvents].when = when;
         return true;
     }

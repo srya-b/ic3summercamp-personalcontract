@@ -90,6 +90,19 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "a",
+						"type": "address"
+					}
+				],
+				"name": "TestEvent",
+				"type": "event"
+			},
+			{
 				"stateMutability": "nonpayable",
 				"type": "fallback"
 			},
@@ -310,10 +323,10 @@
 	},
 	"sources": {
 		"contracts/PersonalContract.sol": {
-			"keccak256": "0x41790e50d8bc5e308af54784dac74f1bd518403d79eee23082713aca3f8964f0",
+			"keccak256": "0xe96a4b94054f441a6d8cd28f575be6f02578b996d23c4aba7e9f7cf25a2e5230",
 			"urls": [
-				"bzz-raw://a8e7a63d3fb4e1de3f486daa3eb51981d3f60cc0164a840d7885f4339cb1b42f",
-				"dweb:/ipfs/QmSJnFHL6D3nuCvbfjuvXH3fDrcxmTmKUSPdGDzfVTXGnm"
+				"bzz-raw://34a9434c98c49e9b667f79de8b242ad4278241ae19bc83f6d9e1d4610fe13263",
+				"dweb:/ipfs/QmYFkg9QuRjka6VhwbDQCE7rHm9SktDMaTrujFTfGs8g4G"
 			]
 		},
 		"contracts/libraries/ECDSA.sol": {

@@ -34,6 +34,8 @@ contract PersonalContract {
     event NewEvent(uint256 indexed when, address indexed who);
     event Cancelled(uint256 indexed when, address indexed who, string reason);
     event Blocked(address indexed who, string reason);
+    event TestEvent(address a);
+
     
     struct Event {
         bool enabled;

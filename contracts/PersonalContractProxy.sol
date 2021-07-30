@@ -33,6 +33,7 @@ contract PersonalContractProxy {
     event NewEvent(uint256 indexed when, address indexed who);
     event Cancelled(uint256 indexed when, address indexed who, string reason);
     event Blocked(address indexed who, string reason);
+    event TestEvent(address a);
 
     struct Event {
         bool enabled;
@@ -73,9 +74,12 @@ contract PersonalContractProxy {
     
     function addEvent(uint256 when) onlyOwner external returns (bool) {
         numEvents += 1;
-        events[numEvents].enabled = true;
-        events[numEvents].open = true;
-        events[numEvents].when = when;
+        
+        events[when].enabled = true;
+        events[when].open = true;
+        events[when].when = when;
+        
+        whenFromNum[numEvents] = when;
         return true;
     }
     

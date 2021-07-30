@@ -126,10 +126,10 @@ async function init() {
         
     var uxurl = await (proxyContract.methods.owner_url().call());
 
-    if (currurl != uxurl) {
-      //alert("cururl: " + currurl + " uxurl: " + uxurl);
-      window.location.replace(uxurl);
-    }
+    //if (currurl != uxurl) {
+    //  //alert("cururl: " + currurl + " uxurl: " + uxurl);
+    //  window.location.replace(uxurl);
+    //}
 
     //console.log('Starting update Events');
 

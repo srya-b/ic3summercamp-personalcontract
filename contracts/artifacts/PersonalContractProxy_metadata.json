@@ -69,6 +69,19 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "a",
+						"type": "address"
+					}
+				],
+				"name": "TestEvent",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "_owner",
 				"outputs": [
@@ -442,10 +455,10 @@
 	},
 	"sources": {
 		"contracts/PersonalContractProxy.sol": {
-			"keccak256": "0xcd88cc7c3f5f48218f9808b31eac8721d3e39a3c160d4198939f56c297ae85f4",
+			"keccak256": "0x37cca8a89c998d5333180f4c204fe08a792f2a23018ef50863429e075dceda40",
 			"urls": [
-				"bzz-raw://63f197d87dbbcdf8ab6c3231c8057676adb7dad618a88cd7a655b2e890d87b76",
-				"dweb:/ipfs/QmUWP9UptJYdcV6RPACLyAHumT1Du3EmjZVBfxfRP4555A"
+				"bzz-raw://996038e0a9a1fcd116667baf271bfb86f5798bd96b820899890d207c1d9b2540",
+				"dweb:/ipfs/QmUs82MpmyyVHyR6x7RTw4asrcZBZzYWEbS6FSBMHbjZCo"
 			]
 		},
 		"contracts/libraries/ECDSA.sol": {

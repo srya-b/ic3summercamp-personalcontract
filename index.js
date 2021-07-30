@@ -1,5 +1,5 @@
 //var myContractAddress = '0x2Debf19564C7ca2c23a179A2b43DC9615cE23ff1'
-var myContractAddress = '0xdEE5bCBAa461cF6F432F54389d45BBd79e07160C';
+//var myContractAddress = '0xdEE5bCBAa461cF6F432F54389d45BBd79e07160C';
 const updateInterval = 1000; // 1 second
 
 // **** Internal functions ****
@@ -107,6 +107,7 @@ async function initCalender() {
 // **** Initialization ****
 
 async function init() {
+    const myContractAddress = prompt("Contract adress");
     window.web3 = new Web3(ethereum)
 
     window.user = (await ethereum.request({ method: 'eth_requestAccounts'}))[0]

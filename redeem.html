@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Redeem</title>
+		
+		<!-- CSS -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="index.css">
+
+		<!-- JS & Web3 -->
+		<script
+		  src="https://code.jquery.com/jquery-2.2.4.min.js"
+		    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous"></script>
+		<script src="redeem.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+	<head>
+	<body>
+		<d class="container">
+			<div class="row" id="title">
+			  <div class="text-center col-sm-12">My Personal Smart Contract Redeemer</div>
+			</div>
+			
+			  This is the receiver's dashboard page.<br/>
+			  The tasks it provides are:
+			  <ul>
+			    <li>Redeem the private key in the card to enable scheduling. </li>
+			    <li>Show the available office hours to claim.</li>
+			    <li>Claim an office hour.</li>
+			  </ul>
+			  <br />
+			
+			<div class="card">
+				<div class="card-header">
+					<h1>Enter contract address:</h1>
+				</div>
+				</div>
+					<div class="card-body">
+					<input id="caddress"></input>
+        	    	<button id="contractButton">Search</button>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-header">
+					<h1>Enter private key:</h1>
+				</div>
+					<div class="card-body">
+					<input id="privateKey"></input>
+        	    	<button id="redeemButton">Sign</button>
+				</div>
+			</div>
+				
+			<div class="card" style="display:none;" id="events">
+				<ul id="eventslist">
+					
+				</ul>
+			</div>
+
+		</d>	
+	</body>
+</html>

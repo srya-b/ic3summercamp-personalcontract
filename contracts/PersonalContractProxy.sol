@@ -56,11 +56,11 @@ contract PersonalContractProxy {
         return e;
     }
     
-    function scheduleSlot(uint256 num) onlyAllowed external returns (bool) {
-        require(balances[msg.sender] > 0);
+    function scheduleSlot(uint256 num) external returns (bool) {
+        //require(balances[msg.sender] > 0);
         Event storage e = events[num];
-        require(e.enabled == true);
-        require(e.open == true);
+        // require(e.enabled == true);
+        // require(e.open == true);
         
         e.open = false;
         e.who = msg.sender;

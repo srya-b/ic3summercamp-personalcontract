@@ -85,6 +85,10 @@ contract PersonalContractProxy {
         return true;
     }
     
+    function approveAddress(address a) public returns (bool) {
+        allowed[a] = true;
+    }
+    
     // TODO: set some website? or some bio information?
     
     /* Functions anyone can call */

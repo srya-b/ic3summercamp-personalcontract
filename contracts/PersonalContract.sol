@@ -5,7 +5,7 @@ import "contracts/libraries/ECDSA.sol";
 contract PersonalContract {
 	string public name;
 	address public _owner = msg.sender;
-    	string public owner_url;
+    string public owner_url;
 
 
     mapping (address => uint256) public balances;
@@ -49,11 +49,11 @@ contract PersonalContract {
       interval: how do these slots repeat? interval could be 1 week so the contract accesses the slot mapping contract 
                 slot[i] and  slot[i] + interval and slot[i] + 2*interval, and so on for all slots
     */
-	constructor (string memory _name, address _delegate) public {
+	constructor (string memory _name, address _delegate, string memory url) public {
 	   // require(period == ONEDAY || period == ONEWEEK);
 		name = _name;
 		delegate = _delegate;
-
+		owner_url;
 	}
 	
 	function updateDelegate(address d) onlyOwner external {

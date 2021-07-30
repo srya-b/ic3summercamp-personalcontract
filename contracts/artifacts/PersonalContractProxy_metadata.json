@@ -123,6 +123,25 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "a",
+						"type": "address"
+					}
+				],
+				"name": "approveAddress",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
@@ -423,10 +442,10 @@
 	},
 	"sources": {
 		"contracts/PersonalContractProxy.sol": {
-			"keccak256": "0xd6ac6de15fd9129aad1ce2d585e8ed9c22f7036c185c1ac5c1fa6ffc5fd5b5d1",
+			"keccak256": "0xcd88cc7c3f5f48218f9808b31eac8721d3e39a3c160d4198939f56c297ae85f4",
 			"urls": [
-				"bzz-raw://b97c664d94cfa34bdf075bb3477baf9da3b62e19dca12829e3d95573c2b72c42",
-				"dweb:/ipfs/QmbjPSF3EBNpCnJqmu4HrTWFPw5rCoZzR7zKQ9RsG4zfzz"
+				"bzz-raw://63f197d87dbbcdf8ab6c3231c8057676adb7dad618a88cd7a655b2e890d87b76",
+				"dweb:/ipfs/QmUWP9UptJYdcV6RPACLyAHumT1Du3EmjZVBfxfRP4555A"
 			]
 		},
 		"contracts/libraries/ECDSA.sol": {

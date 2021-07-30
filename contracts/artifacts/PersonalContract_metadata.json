@@ -16,6 +16,11 @@
 						"internalType": "address",
 						"name": "_delegate",
 						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -305,10 +310,10 @@
 	},
 	"sources": {
 		"contracts/PersonalContract.sol": {
-			"keccak256": "0xdc598bef864a13b1e7cabf92c0b2355dfabcb5bc9b2db8dea6ab75149a30dac3",
+			"keccak256": "0xe363ea8187a5a9979386d91d0b5e463876060f69160217e80ffebbe3af62f224",
 			"urls": [
-				"bzz-raw://681c30be884d6ea6cffb33b934d837d2c65e500c7504a54c4cc3647605045f34",
-				"dweb:/ipfs/QmV5BiHdgCTMUm7eFvPh5xrp2iKXy24a9tcY7L381aVHEd"
+				"bzz-raw://751a048a8acfdeca80132e8b12c3e34df9ba57716b438217096eeb144f4bcce6",
+				"dweb:/ipfs/QmbTfSjhgXcJFo7bz4xA9bM8a7ZfG7k4cDAeWVj61URiHk"
 			]
 		},
 		"contracts/libraries/ECDSA.sol": {

@@ -455,10 +455,10 @@
 	},
 	"sources": {
 		"contracts/PersonalContractProxy.sol": {
-			"keccak256": "0x37cca8a89c998d5333180f4c204fe08a792f2a23018ef50863429e075dceda40",
+			"keccak256": "0x21a29c55ffef73fed3abdc7d53d0d242148b96a02ac222157fdcfec5343412c6",
 			"urls": [
-				"bzz-raw://996038e0a9a1fcd116667baf271bfb86f5798bd96b820899890d207c1d9b2540",
-				"dweb:/ipfs/QmUs82MpmyyVHyR6x7RTw4asrcZBZzYWEbS6FSBMHbjZCo"
+				"bzz-raw://53ba1cdf734b4511d383c4932522c0468b4836eac730b8f51eb66fd3fc70c408",
+				"dweb:/ipfs/QmX838HbX6xsdKBqrwnsq6dyDYQSuHAa2vKsuQBUr63Cgf"
 			]
 		},
 		"contracts/libraries/ECDSA.sol": {

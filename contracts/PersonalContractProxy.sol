@@ -7,6 +7,7 @@ contract PersonalContractProxy {
 	address public _owner = msg.sender;
 	string public owner_url;
 
+
     mapping (address => uint256) public balances;
     mapping (uint256 => Event) public events;
     mapping (uint256 => uint256) public whenFromNum;

@@ -53,7 +53,7 @@ contract PersonalContract {
 	   // require(period == ONEDAY || period == ONEWEEK);
 		name = _name;
 		delegate = _delegate;
-		owner_url;
+		owner_url = url;
 	}
 	
 	function updateDelegate(address d) onlyOwner external {

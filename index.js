@@ -108,7 +108,9 @@ async function initCalender() {
 
 async function init() {
     const myContractAddress = prompt("Contract adress");
-    alert(window.location);
+
+    var currurl = window.location;
+
     window.web3 = new Web3(ethereum)
 
     window.user = (await ethereum.request({ method: 'eth_requestAccounts'}))[0]
@@ -122,6 +124,13 @@ async function init() {
     window.mainContract = new web3.eth.Contract(mainABI, myContractAddress);
     window.numSeen = 0;
         
+    var uxurl = await (proxyContract.methods.owner_url().call());
+
+    if (currurl != uxurl) {
+      //alert("cururl: " + currurl + " uxurl: " + uxurl);
+      window.location.replace(uxurl);
+    }
+
     //console.log('Starting update Events');
 
     await updateEvents();

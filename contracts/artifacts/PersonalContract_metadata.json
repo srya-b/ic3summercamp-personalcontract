@@ -310,10 +310,10 @@
 	},
 	"sources": {
 		"contracts/PersonalContract.sol": {
-			"keccak256": "0xe363ea8187a5a9979386d91d0b5e463876060f69160217e80ffebbe3af62f224",
+			"keccak256": "0x41790e50d8bc5e308af54784dac74f1bd518403d79eee23082713aca3f8964f0",
 			"urls": [
-				"bzz-raw://751a048a8acfdeca80132e8b12c3e34df9ba57716b438217096eeb144f4bcce6",
-				"dweb:/ipfs/QmbTfSjhgXcJFo7bz4xA9bM8a7ZfG7k4cDAeWVj61URiHk"
+				"bzz-raw://a8e7a63d3fb4e1de3f486daa3eb51981d3f60cc0164a840d7885f4339cb1b42f",
+				"dweb:/ipfs/QmSJnFHL6D3nuCvbfjuvXH3fDrcxmTmKUSPdGDzfVTXGnm"
 			]
 		},
 		"contracts/libraries/ECDSA.sol": {

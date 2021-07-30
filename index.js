@@ -108,6 +108,7 @@ async function initCalender() {
 
 async function init() {
     const myContractAddress = prompt("Contract adress");
+    alert(window.location);
     window.web3 = new Web3(ethereum)
 
     window.user = (await ethereum.request({ method: 'eth_requestAccounts'}))[0]

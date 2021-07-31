@@ -2,6 +2,8 @@
 //var myContractAddress = '0xdEE5bCBAa461cF6F432F54389d45BBd79e07160C';
 const updateInterval = 1000; // 1 second
 
+let eventId;
+
 // **** Internal functions ****
 
 function sleep(ms) {
@@ -14,40 +16,74 @@ async function updateEvents() {
 	/* TODO: list the events */
   /* console.log('calling numEvents') */;
   var num_events = await (proxyContract.methods.numEvents().call());
+  // console.log('num_events ', num_events);
+
+  eventId = num_events; 
+  console.log("EVENT ID ", eventId);
+
   var unclaimed = [];
   var claimed = [];
   var oneHour = 60 * 60;
+
   //console.log('numevents = %s', num_events);
   //console.log('numseen = %s', numSeen);
-	for (var i = numSeen+1; i <= num_events; i++) {
-  	var event = await (proxyContract.methods.events(i).call());
-    console.log('event = %s', event);
-    if (event.enabled) {
+
+	for (var i = 1; i <= num_events; i++) {
+  	var event = await (proxyContract.methods.getEvent(i).call());
+
+    console.log("event ", event);
+
+    // Check if event exists 
+    let data = $("#calendar").fullCalendar('clientEvents', function(event){
+
+      console.log("Event id ", event._id)
+
+      if(event.id === i){
+        return true; 
+      }else{
+        return false; 
+      }
+    });
+
+    if(data.length == 0 && event.enabled){
       console.log('enabled');
+
       var newEvent = new Object();
+
       let w = parseInt(event.when) * 1000;
       newEvent.title = 'Office hours';
       newEvent.start = moment(w).format();
-      console.log(w);
-      console.log('newEvent: ' + moment(w).format());
+      // console.log(w);
+      // console.log('newEvent: ' + moment(w).format());
       newEvent.end = moment(w + oneHour * 1000).format();
-      console.log('newEvent: ' + moment(w + oneHour).format());
+      // console.log('newEvent: ' + moment(w + oneHour).format());
       newEvent.allday = false;
-      if (!event.open) {
-      	newEvent.backgroundColor = '#E33C18';
-      }
+
+      console.log("open: ", event.open);
 
       $("#calendar").fullCalendar('renderEvent', newEvent, true);
+    }else if(event.enabled && !event.open && data.length > 0){
+      console.log('data', data);
+      data[0].backgroundColor = '#E33C18';
+      $("#calendar").fullCalendar('updateEvent', data[0]); 
+
     }
-    numSeen = num_events;
-/* 		if (event.enabled && event.open) 
-		      claimed.push(i);
-		    else
-		      unclaimed.push(i);*/
+
+//     console.log('dataaaaa: ', data);
+//     console.log('event = %s', event);
+
+
+//     console.log("EVENT ID INCREASE ", eventId)
+// /* 		if (event.enabled && event.open) 
+// 		      claimed.push(i);
+// 		    else
+// 		      unclaimed.push(i);*/
   }
+  
   $("#unclaimedEvents").text(unclaimed);
   $("#claimedEvents").text(claimed);
 }
+
 
 
 // **** Global functions ****
@@ -85,9 +121,11 @@ async function initCalender() {
             alert('clicked ' + date.format());
           }, */
           select: async function(startDate, endDate) {
+            eventId += 1; 
           	//alert('selected ' + startDate.format() + ' to ' + endDate.format());
 						var ok = confirm("Confirm new event from " + startDate.format("dddd, MMMM Do YYYY, h:mm:ss a") + ' to ' + endDate.format("dddd, MMMM Do YYYY, h:mm:ss a"));
             var newEvent = new Object();
+            newEvent.id = eventId; 
             newEvent.title = 'Office hours';
             newEvent.start = moment(startDate).format();
             newEvent.end = moment(endDate).format();
@@ -125,6 +163,8 @@ async function init() {
     window.numSeen = 0;
         
     var uxurl = await (proxyContract.methods.owner_url().call());
+
+    eventId = 0; 
 
     //if (currurl != uxurl) {
     //  //alert("cururl: " + currurl + " uxurl: " + uxurl);

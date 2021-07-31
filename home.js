@@ -25,7 +25,7 @@ async function updateEvents() {
   var claimed = [];
   var oneHour = 60 * 60;
 
-  //console.log('numevents = %s', num_events);
+  console.log('numevents = %s', num_events);
   //console.log('numseen = %s', numSeen);
 
 	for (var i = 1; i <= num_events; i++) {
@@ -36,7 +36,7 @@ async function updateEvents() {
     // Check if event exists 
     let data = $("#calendar").fullCalendar('clientEvents', function(event){
 
-      console.log("Event id ", event._id)
+      console.log("Event id ", event.id)
 
       if(event.id === i){
         return true; 
@@ -45,24 +45,27 @@ async function updateEvents() {
       }
     });
 
-    if(data.length == 0 && event.enabled){
+    if(data.length == 0 && event.enabled) {
+
       console.log('enabled');
 
       var newEvent = new Object();
 
       let w = parseInt(event.when) * 1000;
+      newEvent.id = i;
       newEvent.title = 'Office hours';
       newEvent.start = moment(w).format();
-      // console.log(w);
-      // console.log('newEvent: ' + moment(w).format());
       newEvent.end = moment(w + oneHour * 1000).format();
-      // console.log('newEvent: ' + moment(w + oneHour).format());
       newEvent.allday = false;
+
+      if (!event.open) {
+        newEvent.backgroundColor = '#E33C18';
+      }
 
       console.log("open: ", event.open);
 
       $("#calendar").fullCalendar('renderEvent', newEvent, true);
-    }else if(event.enabled && !event.open && data.length > 0){
+    } else if (event.enabled && !event.open && data.length > 0) {
       console.log('data', data);
       data[0].backgroundColor = '#E33C18';
       $("#calendar").fullCalendar('updateEvent', data[0]); 

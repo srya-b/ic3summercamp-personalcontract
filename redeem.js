@@ -93,7 +93,8 @@ async function updateEvents() {
       ul.appendChild(link);
 
       newlist.push(ul);      
-    } else if (ev.enabled) {
+    } 
+    /*else if (ev.enabled) {
       let start = new Date(ev.when * 1000);
       let end = new Date((parseInt(ev.when) + 60*60)*1000);
 
@@ -105,18 +106,18 @@ async function updateEvents() {
       var ul = document.createElement("li");
       ul.appendChild(document.createTextNode(text));
       ul.style.color = "red";
-    }
-
-    while (eventlist.firstChild) {
-      eventlist.removeChild(eventlist.firstChild);
-    }
-
-    for (var i = 0; i < newlist.length; i++) {
-      eventlist.appendChild(newlist[i]);
-    }
-    await sleep(25);
-
+    }*/
   }
+
+  while (eventlist.firstChild) {
+    eventlist.removeChild(eventlist.firstChild);
+  }
+
+  for (var i = 0; i < newlist.length; i++) {
+    eventlist.appendChild(newlist[i]);
+  }
+  await sleep(25);
+
   document.getElementById('events').style.display = "";
 }
 
